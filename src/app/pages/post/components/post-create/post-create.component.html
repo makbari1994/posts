@@ -1,0 +1,33 @@
+<form [formGroup]="formData" (ngSubmit)="submit()" #form="ngForm">
+
+    <div class="form">
+        <div class="title">
+            <h3>Create Post</h3>
+            <button routerLink="/posts" mat-raised-button color="primary">
+                Get post List
+            </button>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input formControlName="title" matInput placeholder="Placeholder">
+            <mat-error *ngIf="checkValidation('title')">Title is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Author</mat-label>
+            <input formControlName="author" matInput placeholder="Author">
+            <mat-error *ngIf="checkValidation('author')">Author is not valid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="body" appearance="outline">
+            <mat-label>Body</mat-label>
+            <textarea formControlName="body" matInput></textarea>
+            <mat-error *ngIf="checkValidation('body')">Body is not valid</mat-error>
+        </mat-form-field>
+        <div class="buttons">
+            <button type="submit" mat-raised-button color="primary">
+                <mat-spinner *ngIf="loading" color="accent" [diameter]="20"></mat-spinner>
+                Create
+            </button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,23 @@
+<form [formGroup]="formData" (ngSubmit)="submit()" #form="ngForm">
+
+    <div class="form">
+        <div class="title">
+            <h3>Filter Post</h3>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input #title formControlName="title" matInput placeholder="Title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Author</mat-label>
+            <input #author formControlName="author" matInput placeholder="Author">
+        </mat-form-field>
+
+        <div class="buttons">
+            <button type="submit" mat-raised-button color="primary">
+                Filter
+            </button>
+        </div>
+    </div>
+
+</form>
