@@ -27,8 +27,8 @@ export class PostEffects {
     createPost$ = createEffect(() => this.actions$.pipe(
         ofType(fromActions.CreateAction),
         map(action => action.payload),
-        mergeMap(article =>
-            this.postService.createPost(article).pipe(
+        mergeMap(post =>
+            this.postService.createPost(post).pipe(
                 map(res => fromActions.CreateSuccessAction({ payload: res })),
                 catchError(error => of(fromActions.CreateFailureAction({ payload: error })))
             )
