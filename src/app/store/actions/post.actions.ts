@@ -3,7 +3,7 @@
 import { createAction, props } from '@ngrx/store';
 import { IPost } from 'src/app/pages/post/models/post-model';
 
-/// declare cations
+/// declare actions
 export const ShowAllAction = createAction('[POST] Show All');
 export const ShowAllSuccessAction = createAction('[POST] Show All Success', props<{ payload: IPost[] }>());
 export const CreateAction = createAction('[POST] Create', props<{ payload: IPost }>());
